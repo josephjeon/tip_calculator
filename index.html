@@ -12,29 +12,201 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+    body {
+      background-color: hsl(185, 41%, 84%);
+    }
+    .center {
+      display: block;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      margin-left: auto;
+      margin-right: auto;
+      width: 5%;
+    }
+    .row{
+      width: 50%;
+      height: 50%;
+      background-color: white;
+      border-radius: 25px;
+      margin-bottom: 10%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .row:after{
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .column1{
+      float: left;
+      width: 45%;
+      padding-left: 5%;
+      padding-top: 5%;
+      font-family: monospace;
+      font-size:14px;
+      font-weight: 700;
+      color:hsl(186, 14%, 43%)
+    }
+    .column2{
+      float: left;
+      width: 45%;
+      padding-right: 5%;
+      padding-top: 5%;
+      font-family: monospace;
+      font-size:14px;
+      font-weight: 700;
+      color:white
+    }
+    .right{
+      width: 95%;
+      height: 100%;
+      background-color: hsl(183, 100%, 15%);
+      border-radius: 25px;
+      padding-top: 10%;
+      padding-bottom: 80%;
+      padding-left: 8%;
+    }
+    .column3{
+      float: left;
+      width: 50%;
+    }
+    .column4{
+      float: left;
+      width: 45%;
+      color:hsl(172, 67%, 45%);
+      font-size: 50px;
+      text-align: right;
+      margin-right: 5%;
+    }
+    input[type=text]{
+      width: 85%;
+      border: none;
+      margin: 8px 0;
+      padding: 6px 20px;
+      border-radius: 5px;
+      background-color:hsl(189, 41%, 97%);
+      text-align: right;
+      font-weight: 700;
+      font-size: 24px;
+      font-family: monospace;
+      color:hsl(183, 100%, 15%)
+    }
+    input:focus{
+      outline: none;
+    }
+    .radio-toolbar input[type="radio"]{
+      opacity: 0;
+      position:fixed;
+      width: 0;
+    }
+    .radio-toolbar label{
+      width: 35px;
+      display: inline-block;
+      background-color: hsl(183, 100%, 15%);
+      margin: 8px 4px;
+      padding: 10px 44px;
+      font-family: monospace;
+      font-size: 24px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+    }
+    .radio-toolbar input[type="radio"]:checked + label {
+      background-color:hsl(172, 67%, 45%);
+      color:hsl(183, 100%, 15%)
+    }
+    .radio-toolbar label:hover {
+      background-color: hsl(172, 67%, 45%);
+      color:hsl(183, 100%, 15%)
+    }
+    .radio-toolbar input[type="text"]{
+      width: 29%;
+      height: 48px;
+      text-align: center;
+      display: inline-block;
+      background-color: hsl(189, 41%, 97%);
+      margin: 8px 4px;
+      padding: 0;
+      font-family: monospace;
+      font-size: 24px;
+      border: none;
+      border-radius: 5px;
+      color: hsl(186, 14%, 43%);
+    }
+    .button{
+      border: none;
+      background-color: hsl(172, 67%, 45%);
+      width: 180%;
+      height: 50px;
+      border-radius: 5px;
+      font-family: monospace;
+      font-size: 24px;
+    }
+    .button:hover{
+      background-color:white;
+    }
   </style>
 </head>
 <body>
 
-  Bill
+  <img src="images/logo.svg" alt="logo" class="center">
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+  <div class="row">
+    <div class="column1">
+      Bill<br>
+      <span style="position: absolute; margin-left: 1%; margin-top: 1%;">
+        <img src="images/icon-dollar.svg" alt="dollar">
+      </span>
+      <input type="text" maxlength="17" id="price" name="price" ><br><br><br>
+      Select Tip %<br>
+      <div class="radio-toolbar">
+        <input type="radio" id="radio5" name="radioTip" value="5%">
+        <label for="radio5">5%</label>
 
-  Number of People
+        <input type="radio" id="radio10" name="radioTip" value="10%">
+        <label for="radio10">10%</label>
 
-  Tip Amount
-  / person
+        <input type="radio" id="radio15" name="radioTip" value="15%" checked>
+        <label for="radio15">15%</label>
+        
+        <br>
 
-  Total
-  / person
+        <input type="radio" id="radio25" name="radioTip" value="25%">
+        <label for="radio25">25%</label>
 
-  Reset
+        <input type="radio" id="radio50" name="radioTip" value="50%">
+        <label for="radio50">50%</label>
+
+        <input type="text" name="radioOther" placeholder="Custom" maxlength="8">
+
+      </div>
+      <br><br><br>
+      Number of People<br>
+      <span style="position: absolute; margin-left: 1%; margin-top: 1%;">
+        <img src="images/icon-person.svg" alt="person">
+      </span>
+      <input type="text" maxlength="2" id="price" name="price" ><br><br><br>
+    </div>
+    <div class="column2">
+      <div class="right">
+        <div class="column3">
+          Tip Amount<br><p style="color:hsl(186, 14%, 43%)">/ person</p>
+          <br><br><br>
+          Total<br><p style="color:hsl(186, 14%, 43%)">/ person</p>
+          <br><br><br><br>
+          <button class="button">Submit</button>
+        </div>
+        <div class="column4">
+          <label for="tipAmount">$0.00</label>
+          <br><br>
+          <label for="totalAmount">$0.00</label>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
