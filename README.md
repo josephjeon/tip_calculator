@@ -1,6 +1,6 @@
 # Frontend Mentor - Tip calculator app
 
-![My finished design](./design/frontend.jpg)
+![My finished design](/design/frontend.jpg)
 
 ## Welcome! 👋
 
